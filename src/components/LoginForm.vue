@@ -1,18 +1,7 @@
 <template>
   <form @click.prevent>
     <div class="row g-3 align-items-center">
-      <h1>Sign Up</h1>
-      <div class="col-auto d-block mx-auto">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Enter your Name"
-          v-model="name"
-        />
-      </div>
-    </div>
-    <br />
-    <div class="row g-3 align-items-center">
+      <h1>logIn</h1>
       <div class="col-auto d-block mx-auto">
         <input
           type="text"
@@ -36,10 +25,10 @@
     <br />
     <div class="row g-3 align-items-center">
       <div class="col-auto d-block mx-auto">
-        <button type="submit" class="btn btn-primary">Sign</button>
+        <button type="submit" class="btn btn-primary">Login</button>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <button type="submit" @click="signUpPage()" class="btn btn-primary">
-          Login
+        <button type="button" @click="signUpPage()" class="btn btn-primary">
+          Sign Up
         </button>
         &nbsp;&nbsp;&nbsp;&nbsp;
       </div>
@@ -48,17 +37,16 @@
 </template>
 <script>
 export default {
-  name: "HelloWorld",
+  name: "LoginForm",
   data() {
     return {
-      name: "",
       pass: "",
       email: "",
     };
   },
   methods: {
     signUpPage() {
-      this.$router.push({ name: "LoginView" });
+      this.$router.push({ name: "SignUp" });
     },
   },
 };
